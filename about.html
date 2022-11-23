@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href=./css/about.css>
+</head>
+
+<body>
+  <div class="rightNav">
+    <input type="text" name="search" id="search">
+    <button class="btn btn-sm">Search</button>
+  </div>
+
+  <h1 class="ravi">Welcome to M.d College </h1>
+  <marquee class="marquee">Welcome to our M.D college campuse</marquee>
+  <div class="college">
+    <img src="./images/college.jpg">
+    <div class="map">
+      <!-- Google Map Copied Code -->
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3554.163875113315!2d81.03828187232891!3d27.024987176542208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39995ba616bffb05%3A0x418193d863d7bdb4!2sM.D.%20College!5e0!3m2!1sen!2sin!4v1654244963488!5m2!1sen!2sin"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="container">
+
+      <div class="desc">
+        <div class="tittle">
+          <h1 class="judul">This is gallery</h1>
+          <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit,Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+        </div>
+
+        <div class="imgsrc">
+          <img style="width: 600px;" src="./images/hero.jpg" class=prev">
+        </div>
+      </div>
+
+      <div class="thumbnail">
+        <img src="./images/six.jpg " class="thumb">
+
+        <img src="./images/second.jpg " class="thumb">
+
+        <img src="./images/third.jpg" class="thumb">
+
+        <img src="./images/four.jpg" class="thumb">
+
+        <img src="./images/five.jpg" class="thumb">
+
+        <img src="./images/five.jpg" class="thumb">
+
+      </div>
+    </div>
+
+  </div>
+  <span>
+    <h1 class="hading">Important Links</h1>
+    <div class="link">
+      <a href="https://www.icbse.com/colleges/m-d-college-of-technology-and-management-amarsanda-baraba-q64qgr  "
+        target="_blank" style="color: powderblue;">Visit here our college</a>
+        <a href="https://m.facebook.com/mdcollegebarabanki/"></a>
+    </div>
+  </span>
+  <script>
+    const container = document.querySelector(".container");
+    const preview = document.querySelector(".prev");
+    const active = document.querySelectorAll(".thumb");
+
+    container.addEventListener("click", function (e) {
+      if (e.target.className == "thumb") {
+        preview.src = e.target.src;
+        preview.classList.add("effect");
+
+        setTimeout(function () {
+          preview.classList.remove("effect");
+        }, 100);
+
+        active.forEach(function (thumb) {
+          if (thumb.classList.contains("active")) {
+            thumb.classList.remove("active");
+          }
+        });
+
+        e.target.classList.add("active");
+      }
+    });
+  </script>
+</body>
+
+</html>
